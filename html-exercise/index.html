@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APPLE BASKET EXERCISE</title>
+  <style>
+    section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 60vw;
+  margin: auto;
+}
+button img{
+  width: 50px;
+}
+  </style>
+</head>
+<body>
+  <section>
+    <div class="basket-1">
+      <h1><span></span> Apples</h1>
+      <p>Basket 1</p>
+    </div>
+    <button class="left-arrow">
+      <img src="./image/left-arrow-png-left-icon-1600.png.crdownload" alt="">
+    </button>
+    <button class="right-arrow">
+      <img src="./image/Right-Arrow-PNG-Image.png" alt="">
+    </button>
+    <div class="basket-2">
+      <h1><span></span> Apples</h1>
+      <p>Basket 2</p>
+    </div>
+  </section>
+
+  <script>
+    const span1= document.querySelector(".basket-1 span");
+    const span2= document.querySelector(".basket-2 span");
+    const left_btn= document.querySelector(".left-arrow");
+    const right_btn= document.querySelector(".right-arrow");
+
+        let left_basket = 100;
+        let right_basket = 0;
+        
+        function basketVal(){
+
+          span1.innerText=left_basket;
+          span2.innerText=right_basket;
+        };
+    left_btn.addEventListener("click",()=>{
+      if(right_basket <=0){
+            right_basket=0;
+          }else{
+
+            left_basket++;
+            right_basket--;
+          }
+          basketVal();
+          
+    });
+    right_btn.addEventListener("click",()=>{
+      if(left_basket<=0){
+            left_basket=0;
+          }else{
+            right_basket++;
+          left_basket--;
+        }
+        basketVal();
+          
+
+         
+          
+    });
+    basketVal();
+
+    
+  </script>
+</body>
+</html>

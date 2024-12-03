@@ -1,0 +1,1 @@
+To start any project you need to go on that folder and open it in the terminal then run first command npm init -y and then run npm start to start the server now you could see the url in the terminal open the url in the browser to see the project.
