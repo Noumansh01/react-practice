@@ -1,8 +1,17 @@
 import React from 'react'
-import countryData from '../countryData'
 import CountryCard from './CountryCard'
 
 export default function CountryList({inputText}) {
+  const [countryData, setCountryData] = useState([])
+
+  useEffect(() => {
+    fetch('https://restcountries.com/v3.1/all')
+      .then((res) => res.json())
+      .then((data) => {
+        setCountryData(data)
+    })
+  }, [])
+
   return (
     <div className="countries-container">
       {countryData.filter((val)=>{
