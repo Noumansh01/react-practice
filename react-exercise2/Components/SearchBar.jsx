@@ -1,6 +1,4 @@
-import React from 'react'
-import { useState } from 'react';
-import FilterCountry from './FilterCountry';
+
 
 export default function SearchBar({setinput}) {
 

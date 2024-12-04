@@ -4,9 +4,8 @@ import App from "./App.js"
 import Home from "./Components/Home.jsx";
 import CountryDetail from "./Components/CountryDetails.jsx";
 import Contact from "./Components/Contact.jsx";
-const getRootById= document.getElementById("root");
-const root = createRoot(getRootById);
-const Root=createBrowserRouter([
+
+const router=createBrowserRouter([
 {
   path:"/",
   element:<App/>,
@@ -27,4 +26,7 @@ const Root=createBrowserRouter([
 }
 ])
 
-root.render(<RouterProvider root={Root}/>);
+const getRootById= document.getElementById("root");
+const root = createRoot(getRootById);
+
+root.render(<RouterProvider router={router}/>);

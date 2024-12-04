@@ -1,8 +1,7 @@
-import Header from './components/Header'
-import SearchBar from './components/SearchBar'
-import SelectMenu from './components/SelectMenu'
-import CountryList from './components/CountryList'
-import './App.css'
+import SearchBar from './SearchBar'
+import SelectMenu from './SelectMenu'
+import CountryList from './CountryList'
+import '../App.css'
 import { useState } from 'react'
 
 const Home = () => {
