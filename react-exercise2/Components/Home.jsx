@@ -7,6 +7,7 @@ import { useState } from 'react'
 const Home = () => {
   // using the lifting the state up technique
   const [inputVal, setinputVal]= useState("");
+  
   return (
     <>
   
