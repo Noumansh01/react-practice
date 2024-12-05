@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import CountryCard from './CountryCard'
+import ShimmerEffect from "./shimmerEffect"
 
 export default function CountryList({inputText,}) {
   const [countryData, setCountryData] = useState([])
+  const [isloading, setisloading] = useState(true)
 
   useEffect(() => {
     fetch('https://restcountries.com/v3.1/all')
       .then((res) => res.json())
       .then((data) => {
         setCountryData(data);
+        setisloading(false)
+          
+        
       })
   
 
@@ -20,7 +25,7 @@ export default function CountryList({inputText,}) {
 
   return (
     <div className="countries-container">
-      {countryData.filter((val)=>{
+      { isloading? <ShimmerEffect/>  : (countryData.filter((val)=>{
          return val.name.common.toLowerCase().includes(inputText);
       }).map((country) => {
         return (
@@ -33,7 +38,7 @@ export default function CountryList({inputText,}) {
             capital={country.capital?.[0]}
           />
         )
-      })}
+      }))}
     </div>
   )
 }
