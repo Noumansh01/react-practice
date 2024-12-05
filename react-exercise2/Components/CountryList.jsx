@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import CountryCard from './CountryCard'
 
-export default function CountryList({inputText}) {
+export default function CountryList({inputText,}) {
   const [countryData, setCountryData] = useState([])
 
   useEffect(() => {
     fetch('https://restcountries.com/v3.1/all')
       .then((res) => res.json())
       .then((data) => {
-        setCountryData(data)
-    })
+        setCountryData(data);
+      })
+  
+
+       
+      
   }, [])
+
+  
 
   return (
     <div className="countries-container">

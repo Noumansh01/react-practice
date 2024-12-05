@@ -8,6 +8,7 @@ const Home = () => {
   // using the lifting the state up technique
   const [inputVal, setinputVal]= useState("");
   
+  
   return (
     <>
   
@@ -16,7 +17,7 @@ const Home = () => {
           <SearchBar setinput={setinputVal} />
           <SelectMenu />
         </div>
-        <CountryList inputText={inputVal} />
+       <CountryList inputText={inputVal}/> 
       </main>
     </>
   )
